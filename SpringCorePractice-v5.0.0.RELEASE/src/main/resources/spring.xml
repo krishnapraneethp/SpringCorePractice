@@ -2,9 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
-	
-	<bean id="triangle" class = "practice.spring.core.shapes.Triangle">
-		<property name="type" value="Equilateral"/>
+
+	<bean id="triangle" class="practice.spring.core.shapes.Triangle">
+		<constructor-arg type="java.lang.String" index="3" value="Krishna" />
+		<constructor-arg type="int" value="20" index="1" />
+		<constructor-arg type="java.lang.String" value="Equilateral" index="2"/>
+		<constructor-arg type="int" value="12" index="0" />
 	</bean>
 
 </beans>
