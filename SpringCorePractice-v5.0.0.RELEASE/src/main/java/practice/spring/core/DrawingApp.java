@@ -8,9 +8,9 @@ import practice.spring.core.shapes.Triangle;
 public class DrawingApp {
 
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		Triangle triangle = (Triangle) context.getBean("triangle");
-		triangle.draw();
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+		Triangle triangle = (Triangle) applicationContext.getBean("triangle");
+		System.out.println(triangle.draw());
 	}
 
 }

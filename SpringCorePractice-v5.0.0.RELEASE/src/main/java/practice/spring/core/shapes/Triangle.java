@@ -1,45 +1,56 @@
 package practice.spring.core.shapes;
 
-public class Triangle {
+import practice.spring.core.utilities.Point;
+import practice.spring.core.utilities.TriangleDescr;
 
-	private int height;
-	private int width;
-	private String author;
-	private String type;
+public class Triangle implements Shape {
 
-	public int getHeight() {
-		return height;
+	private Point pointA;
+	private Point pointB;
+	private Point pointC;
+	private TriangleDescr triangleDescr;
+
+	public Point getPointA() {
+		return pointA;
+	}
+	public void setPointA(Point pointA) {
+		this.pointA = pointA;
 	}
 
-	public int getWidth() {
-		return width;
+	public Point getPointB() {
+		return pointB;
 	}
 
-	public String getType() {
-		return type;
+	public void setPointB(Point pointB) {
+		this.pointB = pointB;
 	}
 
-	public String getAuthor() {
-		return author;
+	public Point getPointC() {
+		return pointC;
 	}
 
-	public Triangle(String type) {
-		this.type = type;
+	public void setPointC(Point pointC) {
+		this.pointC = pointC;
 	}
 
-	public Triangle(int height) {
-		this.height = height;
+	public TriangleDescr getTriangleDescr() {
+		return triangleDescr;
+	}
+	public void setTriangleDescr(TriangleDescr triangleDescr) {
+		this.triangleDescr = triangleDescr;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "A triangle was drawn with coordinates: " + "(" + this.getPointA().getX() + "," + this.getPointA().getY()
+				+ ")," + "(" + this.getPointB().getX() + "," + this.getPointB().getY() + ")," + "("
+				+ this.getPointC().getX() + "," + this.getPointC().getY() + "). "+this.getTriangleDescr();
 	}
 
-	public Triangle(int height, int width, String type, String author) {
-		this.type = type;
-		this.height = height;
-		this.author = author;
-		this.width = width;
+	@Override
+	public String draw() {
+		return this.toString();
 	}
 
-	public void draw() {
-		System.out.println(this.getType() + " Triangle drawn by " + this.getAuthor() + " with height "
-				+ this.getHeight() + " and width " + this.getWidth());
-	}
 }
