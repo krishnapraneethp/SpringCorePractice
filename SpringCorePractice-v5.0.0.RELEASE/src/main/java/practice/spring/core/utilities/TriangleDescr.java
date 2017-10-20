@@ -27,9 +27,6 @@ public class TriangleDescr {
 		this.type = type;
 	}
 
-	public TriangleDescr() {
-	}
-
 	public TriangleDescr(int height) {
 		this.height = height;
 	}
@@ -40,14 +37,10 @@ public class TriangleDescr {
 		this.author = author;
 		this.width = width;
 	}
-
+	
 	@Override
 	public String toString() {
 		return this.getType() + " Triangle drawn by " + this.getAuthor() + " with height "
 				+ this.getHeight() + " and width " + this.getWidth();
-	}
-	
-	public String description() {
-		return this.toString();
 	}
 }

@@ -4,27 +4,31 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
 	<bean id="triangle-constructorinjector" class="practice.spring.core.utilities.TriangleDescr">
-		<constructor-arg type="java.lang.String" index="3" value="Krishna" />
+		<constructor-arg type="java.lang.String" index="3" value="Krishna"/>
 		<constructor-arg type="int" value="20" index="1" />
 		<constructor-arg type="java.lang.String" value="Equilateral" index="2" />
 		<constructor-arg type="int" value="12" index="0" />
 	</bean>
 	<bean id="triangle" class="practice.spring.core.shapes.Triangle">
 		<property name="pointA" ref="zeroPoint" />
-		<property name="pointB" ref="pointX" />
-		<property name="pointC" ref="pointY" />
-		<property name="triangleDescr" ref="triangle-constructorinjector" />
+		<property name="pointB">
+			<bean class="practice.spring.core.utilities.Point">
+				<property name="x" value="0" />
+				<property name="y" value="-20" />
+			</bean>
+		</property>
+		<property name="pointC">
+			<bean class="practice.spring.core.utilities.Point">
+				<property name="x" value="-20" />
+				<property name="y" value="0" />
+			</bean>
+		</property>
+		<property name="triangleDescr" ref="triangle-description" />
 	</bean>
 	<bean id="zeroPoint" class="practice.spring.core.utilities.Point">
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
-	<bean id="pointX" class="practice.spring.core.utilities.Point">
-		<property name="x" value="0" />
-		<property name="y" value="-20" />
-	</bean>
-	<bean id="pointY" class="practice.spring.core.utilities.Point">
-		<property name="x" value="-20" />
-		<property name="y" value="0" />
-	</bean>
+	
+	<alias name="triangle-constructorinjector" alias="triangle-description"/>
 </beans>
