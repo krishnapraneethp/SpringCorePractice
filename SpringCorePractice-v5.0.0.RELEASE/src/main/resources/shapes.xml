@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<import resource="triangle.xml"/>
+	<import resource="rectangle.xml"/>
+
+	<bean id = "shapes" class="practice.spring.core.shapes.Shape">
+		<property name="triangleMap">
+			<map>
+				<entry key="triangle1" value-ref="triangle"/>
+				<entry key="triangle2" value-ref="triangle"/>
+			</map>
+		</property>
+		<property name="rectangleMap">
+			<map>
+				<entry key="rectangle1" value-ref="rectangle"/>
+				<entry key="rectangle2" value-ref="rectangle"/>
+			</map>
+		</property>
+	</bean>
+</beans>

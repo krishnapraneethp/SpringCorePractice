@@ -1,9 +1,9 @@
 package practice.spring.core.shapes;
 
-import practice.spring.core.utilities.Point;
-import practice.spring.core.utilities.TriangleDescr;
+import practice.spring.core.shapes.utilities.Point;
+import practice.spring.core.shapes.utilities.TriangleDescr;
 
-public class Triangle implements Shape {
+public class Triangle extends Shape {
 
 	private Point pointA;
 	private Point pointB;
@@ -43,7 +43,7 @@ public class Triangle implements Shape {
 	
 	@Override
 	public String toString() {
-		return "A triangle was drawn with coordinates: " + "(" + this.getPointA().getX() + "," + this.getPointA().getY()
+		return " with coordinates " + "(" + this.getPointA().getX() + "," + this.getPointA().getY()
 				+ ")," + "(" + this.getPointB().getX() + "," + this.getPointB().getY() + ")," + "("
 				+ this.getPointC().getX() + "," + this.getPointC().getY() + "). "+this.getTriangleDescr();
 	}

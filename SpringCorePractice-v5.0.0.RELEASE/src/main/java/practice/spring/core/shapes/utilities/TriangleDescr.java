@@ -1,4 +1,4 @@
-package practice.spring.core.utilities;
+package practice.spring.core.shapes.utilities;
 
 public class TriangleDescr {
 
