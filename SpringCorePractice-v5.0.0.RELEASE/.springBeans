@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/resources/triangle.xml</config>
 		<config>src/main/resources/rectangle.xml</config>
+		<config>src/main/resources/spring.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

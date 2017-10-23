@@ -4,21 +4,21 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 							http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-	<bean id="rectangle" class="practice.spring.core.shapes.Rectangle">
+	<bean id="rectangle_collections" class="practice.spring.core.shapes.Rectangle">
 		<property name="listPoints">
 			<list value-type="practice.spring.core.shapes.utilities.Point">
-				<ref bean="pointA"/>
-				<ref bean="pointA"/>
-				<ref bean="pointC"/>
-				<ref bean="pointD"/>
+				<ref bean="pointA" />
+				<ref bean="pointA" />
+				<ref bean="pointC" />
+				<ref bean="pointD" />
 			</list>
 		</property>
 		<property name="setPoints">
 			<set value-type="practice.spring.core.shapes.utilities.Point">
-				<ref bean="pointA"/>
-				<ref bean="pointA"/>
-				<ref bean="pointC"/>
-				<ref bean="pointD"/>
+				<ref bean="pointA" />
+				<ref bean="pointA" />
+				<ref bean="pointC" />
+				<ref bean="pointD" />
 			</set>
 		</property>
 	</bean>

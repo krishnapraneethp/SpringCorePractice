@@ -15,12 +15,31 @@
 		</property>
 		<property name="rectangleMap">
 			<map>
-				<entry key="rectangle1" value-ref="rectangle"/>
-				<entry key="rectangle2" value-ref="rectangle"/>
+				<entry key="rectangle1" value-ref="rectangle_collections"/>
+				<entry key="rectangle2" value-ref="rectangle_collections"/>
 			</map>
 		</property>
 	</bean>
-	<bean id = "shapes" class="practice.spring.core.shapes.utilities.Shapes"/>
+	<bean id = "shapes" class="practice.spring.core.shapes.utilities.Shapes">
+		<property name="points">
+			<list>
+				<ref bean="pointA"/>
+				<ref bean="pointB"/>
+				<ref bean="pointC"/>
+			</list>
+		</property>
+	</bean>
+	<bean id = "triangle" class="practice.spring.core.collections.beandef.Triangle" parent="shapes"/>
+	<bean id="rectangle"
+		class="practice.spring.core.collections.beandef.Rectangle"
+		parent="shapes">
+		<property name="points">
+			<list merge="true">
+				<ref bean="pointD" />
+			</list>
+		</property>
+	</bean>
+	
 	<bean id="shapes_autowiring_bytype" autowire="byType" parent="shapes"/>
 	<bean id="circle" class="practice.spring.core.shapes.Circle">
 		<property name="center" ref="center"/>

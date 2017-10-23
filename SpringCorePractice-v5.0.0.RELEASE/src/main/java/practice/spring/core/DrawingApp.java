@@ -8,9 +8,10 @@ import practice.spring.core.shapes.utilities.Shapes;
 public class DrawingApp {
 
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("shapes.xml");
-		Shapes shapes = (Shapes) applicationContext.getBean("shapes_autowiring_bytype");
-//		shapes.drawVariousShapes();
-		System.out.println(shapes.draw());
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+		Shapes rectangle = (Shapes) applicationContext.getBean("rectangle");
+		Shapes triangle = (Shapes) applicationContext.getBean("triangle");
+		System.out.println("A rectangle was drawn: "+rectangle.draw());
+		System.out.println("A triangle was drawn: "+triangle.draw());
 	}
 }

@@ -1,5 +1,7 @@
 package practice.spring.core.shapes.utilities;
 
+import java.util.List;
+
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
@@ -11,6 +13,8 @@ import practice.spring.core.shapes.Rectangle;
 import practice.spring.core.shapes.Triangle;
 
 public class Shapes implements Shape, ApplicationContextAware, BeanNameAware {
+	
+	private List<Point> points;
 	private TriangleAW triangle;
 	private Rectangle rectangle;
 	private Circle circle;
@@ -51,7 +55,7 @@ public class Shapes implements Shape, ApplicationContextAware, BeanNameAware {
 	
 	@Override
 	public String draw() {
-		return this.toString();
+		return super.toString();
 	}
 	
 	public String getBeanName() {
@@ -70,6 +74,12 @@ public class Shapes implements Shape, ApplicationContextAware, BeanNameAware {
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		this.applicationContext = applicationContext;
+	}
+	public List<Point> getPoints() {
+		return points;
+	}
+	public void setPoints(List<Point> points) {
+		this.points = points;
 	}
 	
 }
