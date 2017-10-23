@@ -55,7 +55,7 @@ public class Shapes implements Shape, ApplicationContextAware, BeanNameAware {
 	
 	@Override
 	public String draw() {
-		return super.toString();
+		return this.toString();
 	}
 	
 	public String getBeanName() {
@@ -81,5 +81,11 @@ public class Shapes implements Shape, ApplicationContextAware, BeanNameAware {
 	public void setPoints(List<Point> points) {
 		this.points = points;
 	}
+	public void myGlobalInitMethod() {
+		System.out.println("My Global Init method is called");
+	}
 	
+	public void myGlobalDestroyMethod() {
+		System.out.println("My Global Destroy method is called");
+	}
 }

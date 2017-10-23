@@ -17,15 +17,11 @@
 	<bean id="triangle-autowiring-constructor" class="practice.spring.core.shapes.Triangle"
 		autowire="constructor" />
 
-	<bean id="triangle-autowiring-byType" class="practice.spring.core.autowire.bytype.TriangleAW"
-		parent="triangle_singleton" />
-	<bean id="triangle-scope-prototype" parent="triangle_singleton" scope="prototype">
-
-	</bean>
-	
+	<bean id="triangle-autowiring-byType" class="practice.spring.core.autowire.bytype.TriangleAW"/>
+	<bean id="triangle-scope-prototype" parent="triangle_singleton" scope="prototype"/>
 	
 	<bean id="triangle_singleton" class="practice.spring.core.shapes.Triangle"
-		scope="singleton">
+		scope="singleton" init-method="myInitMethod" destroy-method="myDestroyMethod">
 		<property name="pointA" ref="zeroPoint" />
 		<property name="pointB">
 			<bean class="practice.spring.core.shapes.utilities.Point">

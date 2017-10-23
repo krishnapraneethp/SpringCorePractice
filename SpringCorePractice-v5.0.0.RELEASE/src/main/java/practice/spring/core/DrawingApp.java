@@ -1,6 +1,6 @@
 package practice.spring.core;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import practice.spring.core.shapes.utilities.Shapes;
@@ -8,10 +8,10 @@ import practice.spring.core.shapes.utilities.Shapes;
 public class DrawingApp {
 
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
-		Shapes rectangle = (Shapes) applicationContext.getBean("rectangle");
-		Shapes triangle = (Shapes) applicationContext.getBean("triangle");
-		System.out.println("A rectangle was drawn: "+rectangle.draw());
-		System.out.println("A triangle was drawn: "+triangle.draw());
+			AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext("shapes.xml");
+			applicationContext.registerShutdownHook();
+			Shapes triangle = (Shapes) applicationContext.getBean("shapes");
+			System.out.println("A triangle was drawn: "+triangle.draw());
+			applicationContext.close();
 	}
 }

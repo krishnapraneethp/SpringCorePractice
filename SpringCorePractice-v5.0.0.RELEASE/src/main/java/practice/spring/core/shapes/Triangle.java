@@ -1,10 +1,13 @@
 package practice.spring.core.shapes;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
 import practice.spring.core.shapes.utilities.Point;
 import practice.spring.core.shapes.utilities.Shape;
 import practice.spring.core.shapes.utilities.TriangleDescr;
 
-public class Triangle implements Shape {
+public class Triangle implements Shape, InitializingBean, DisposableBean {
 
 	private Point pointA;
 	private Point pointB;
@@ -68,5 +71,21 @@ public class Triangle implements Shape {
 	public String draw() {
 		return this.toString();
 	}
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("Bean is being destroyed");
+	}
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Bean is being initialized");
+	}
 
+	public void myInitMethod() {
+		System.out.println("My Init method is called");
+	}
+	
+	public void myDestroyMethod() {
+		System.out.println("My Destroy method is called");
+	}
+	
 }
