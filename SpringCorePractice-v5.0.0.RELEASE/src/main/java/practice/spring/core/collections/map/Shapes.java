@@ -1,15 +1,19 @@
 /**
  * 
  */
-package practice.spring.core.shapes;
+package practice.spring.core.collections.map;
 
 import java.util.Map;
+
+import practice.spring.core.shapes.Rectangle;
+import practice.spring.core.shapes.Triangle;
+import practice.spring.core.shapes.utilities.Shape;
 
 /**
  * @author krishnapraneethp
  *
  */
-public class Shape {
+public class Shapes implements Shape {
 	private Map<String, Triangle> triangleMap;
 	private Map<String, Rectangle> rectangleMap;
 
@@ -35,6 +39,7 @@ public class Shape {
 				+".\nA rectangle was drawn: "+ this.getRectangleMap().get("rectangle1");
 	}
 	
+	@Override
 	public String draw() {
 		return this.toString();
 	}

@@ -2,13 +2,25 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
-	
-<bean id="triangle-constructorinjector" class="practice.spring.core.shapes.utilities.TriangleDescr">
-		<constructor-arg type="java.lang.String" index="3" value="Krishna"/>
+
+	<bean id="triangle-constructorinjector" class="practice.spring.core.shapes.utilities.TriangleDescr">
+		<constructor-arg type="java.lang.String" index="3"
+			value="Krishna" />
 		<constructor-arg type="int" value="20" index="1" />
-		<constructor-arg type="java.lang.String" value="Equilateral" index="2" />
+		<constructor-arg type="java.lang.String" value="Equilateral"
+			index="2" />
 		<constructor-arg type="int" value="12" index="0" />
 	</bean>
+
+	<bean id="triangle-autowiring-byName" class="practice.spring.core.shapes.Triangle"
+		autowire="byName" />
+	<bean id="triangle-autowiring-constructor" class="practice.spring.core.shapes.Triangle"
+		autowire="constructor" />
+
+<bean id="triangle-autowiring-byType" class="practice.spring.core.autowire.bytype.Triangle" parent="triangle">
+
+</bean>
+
 	<bean id="triangle" class="practice.spring.core.shapes.Triangle">
 		<property name="pointA" ref="zeroPoint" />
 		<property name="pointB">
@@ -29,7 +41,7 @@
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
-	
-	<alias name="triangle-constructorinjector" alias="triangle-description"/>
+
+	<alias name="triangle-constructorinjector" alias="triangle-description" />
 
 </beans>

@@ -1,4 +1,4 @@
-package practice.spring.core.shapes;
+package practice.spring.core.autowire.bytype;
 
 import practice.spring.core.shapes.utilities.Point;
 import practice.spring.core.shapes.utilities.Shape;

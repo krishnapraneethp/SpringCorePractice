@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Set;
 
 import practice.spring.core.shapes.utilities.Point;
+import practice.spring.core.shapes.utilities.Shape;
 
-public class Rectangle extends Shape {
+public class Rectangle implements Shape {
 
 	private List<Point> listPoints;
 	private Set<Point> setPoints;

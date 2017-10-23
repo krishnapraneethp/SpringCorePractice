@@ -6,11 +6,11 @@
 	<import resource="triangle.xml"/>
 	<import resource="rectangle.xml"/>
 
-	<bean id = "shapes" class="practice.spring.core.shapes.Shape">
+	<bean id = "shapes_collections_map" class="practice.spring.core.collections.map.Shapes">
 		<property name="triangleMap">
 			<map>
-				<entry key="triangle1" value-ref="triangle"/>
-				<entry key="triangle2" value-ref="triangle"/>
+				<entry key="triangle1" value-ref="triangle-autowiring-byName"/>
+				<entry key="triangle2" value-ref="triangle-autowiring-constructor"/>
 			</map>
 		</property>
 		<property name="rectangleMap">
@@ -19,5 +19,13 @@
 				<entry key="rectangle2" value-ref="rectangle"/>
 			</map>
 		</property>
+	</bean>
+	<bean id="shapes_autowiring_bytype" class="practice.spring.core.autowire.bytype.Shapes" autowire="byType"/>
+	<bean id="circle" class="practice.spring.core.shapes.Circle">
+		<property name="center" ref="center"/>
+	</bean>
+	<bean id="center" class="practice.spring.core.shapes.utilities.Point">
+		<property name="x" value="20" />
+		<property name="y" value="10" />
 	</bean>
 </beans>
