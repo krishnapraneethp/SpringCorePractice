@@ -4,7 +4,7 @@ import practice.spring.core.shapes.utilities.Point;
 import practice.spring.core.shapes.utilities.Shape;
 import practice.spring.core.shapes.utilities.TriangleDescr;
 
-public class Triangle implements Shape {
+public class TriangleAW implements Shape {
 
 	private Point pointA;
 	private Point pointB;
@@ -40,7 +40,8 @@ public class Triangle implements Shape {
 	public void setTriangleDescr(TriangleDescr triangleDescr) {
 		this.triangleDescr = triangleDescr;
 	}
-	public Triangle() {
+	public TriangleAW() {
+		
 	}
 	
 	/**
@@ -49,7 +50,7 @@ public class Triangle implements Shape {
 	 * @param pointC
 	 * @param triangleDescr
 	 */
-	public Triangle(Point pointA, Point pointB, Point pointC, TriangleDescr triangleDescr) {
+	public TriangleAW(Point pointA, Point pointB, Point pointC, TriangleDescr triangleDescr) {
 		this.pointA = pointA;
 		this.pointB = pointB;
 		this.pointC = pointC;

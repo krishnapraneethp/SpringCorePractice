@@ -17,7 +17,7 @@
 	<bean id="triangle-autowiring-constructor" class="practice.spring.core.shapes.Triangle"
 		autowire="constructor" />
 
-<bean id="triangle-autowiring-byType" class="practice.spring.core.autowire.bytype.Triangle" parent="triangle"/>
+<bean id="triangle-autowiring-byType" class="practice.spring.core.autowire.bytype.TriangleAW" parent="triangle"/>
 <bean id="triangle-scope-prototype" parent="triangle" scope="prototype">
 
 </bean>

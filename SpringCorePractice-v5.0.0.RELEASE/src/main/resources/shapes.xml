@@ -20,7 +20,8 @@
 			</map>
 		</property>
 	</bean>
-	<bean id="shapes_autowiring_bytype" class="practice.spring.core.autowire.bytype.Shapes" autowire="byType"/>
+	<bean id = "shapes" class="practice.spring.core.shapes.utilities.Shapes"/>
+	<bean id="shapes_autowiring_bytype" autowire="byType" parent="shapes"/>
 	<bean id="circle" class="practice.spring.core.shapes.Circle">
 		<property name="center" ref="center"/>
 	</bean>
@@ -28,4 +29,5 @@
 		<property name="x" value="20" />
 		<property name="y" value="10" />
 	</bean>
+	<alias name="shapes" alias="shapes_aware_interfaces"/>
 </beans>
