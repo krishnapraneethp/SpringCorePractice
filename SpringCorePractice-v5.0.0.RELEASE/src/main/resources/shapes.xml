@@ -4,35 +4,38 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd"
 	default-init-method="myGlobalInitMethod" default-destroy-method="myGlobalDestroyMethod">
 
-	<import resource="triangle.xml"/>
-	<import resource="rectangle.xml"/>
-
-	<bean id = "shapes_collections_map" class="practice.spring.core.collections.map.Shapes">
+	<import resource="triangle.xml" />
+	<import resource="rectangle.xml" />
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="pointsconfig.properties"></property>
+	</bean>
+	<bean id="shapes_collections_map" class="practice.spring.core.collections.map.Shapes">
 		<property name="triangleMap">
 			<map>
-				<entry key="triangle1" value-ref="triangle-autowiring-byName"/>
-				<entry key="triangle2" value-ref="triangle-autowiring-constructor"/>
+				<entry key="triangle1" value-ref="triangle-autowiring-byName" />
+				<entry key="triangle2" value-ref="triangle-autowiring-constructor" />
 			</map>
 		</property>
 		<property name="rectangleMap">
 			<map>
-				<entry key="rectangle1" value-ref="rectangle_collections"/>
-				<entry key="rectangle2" value-ref="rectangle_collections"/>
+				<entry key="rectangle1" value-ref="rectangle_collections" />
+				<entry key="rectangle2" value-ref="rectangle_collections" />
 			</map>
 		</property>
 	</bean>
 	<bean id="shapes" class="practice.spring.core.utilities.shapes.Shapes">
 		<property name="points">
 			<list>
-				<ref bean="pointA"/>
-				<ref bean="pointB"/>
-				<ref bean="pointC"/>
+				<ref bean="pointA" />
+				<ref bean="pointB" />
+				<ref bean="pointC" />
 			</list>
 		</property>
 	</bean>
-	<bean id = "triangle" class="practice.spring.core.collections.beandef.Triangle" parent="shapes"/>
-	<bean id="rectangle"
-		class="practice.spring.core.collections.beandef.Rectangle"
+	<bean id="triangle" class="practice.spring.core.collections.beandef.Triangle"
+		parent="shapes" />
+	<bean id="rectangle" class="practice.spring.core.collections.beandef.Rectangle"
 		parent="shapes">
 		<property name="points">
 			<list merge="true">
@@ -40,14 +43,16 @@
 			</list>
 		</property>
 	</bean>
-	<bean class="practice.spring.core.utilities.shapes.ShapesBeanPostProcessor"/>
-	<bean id="shapes_autowiring_bytype" autowire="byType" parent="shapes"/>
-	 <bean id="circle" class="practice.spring.core.shapes.Circle">
-		<property name="center" ref="center"/>
-	</bean> 
+	<bean class="practice.spring.core.utilities.shapes.ShapesBeanPostProcessor" />
+	<bean id="shapes_autowiring_bytype" autowire="byType" parent="shapes" />
+	<bean id="circle" class="practice.spring.core.shapes.Circle">
+		<property name="center" ref="center" />
+	</bean>
 	<bean id="center" class="practice.spring.core.utilities.shapes.Point">
 		<property name="x" value="20" />
 		<property name="y" value="10" />
 	</bean>
-	<alias name="shapes" alias="shapes_aware_interfaces"/>
+	<alias name="shapes" alias="shapes_aware_interfaces" />
+	<bean
+		class="practice.spring.core.utilities.shapes.ShapesBeanFactoryPostProcessor" />
 </beans>

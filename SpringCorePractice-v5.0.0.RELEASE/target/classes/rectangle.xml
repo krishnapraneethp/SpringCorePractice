@@ -22,9 +22,12 @@
 			</set>
 		</property>
 	</bean>
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="pointsconfig.properties"/>
+	</bean>
 	<bean id="pointA" class="practice.spring.core.utilities.shapes.Point">
-		<property name="x" value="2" />
-		<property name="y" value="4" />
+		<property name="x" value="${points.x}" />
+		<property name="y" value="${points.y}" />
 	</bean>
 	<bean id="pointB" class="practice.spring.core.utilities.shapes.Point">
 		<property name="x" value="2" />

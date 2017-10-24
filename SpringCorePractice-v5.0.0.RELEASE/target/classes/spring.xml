@@ -5,5 +5,4 @@
 <import resource="shapes.xml"/>
 	<bean id="stringBuilder" class = "java.lang.StringBuilder" scope="prototype"/>
 	
-	
 </beans>
