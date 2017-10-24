@@ -21,7 +21,7 @@
 			</map>
 		</property>
 	</bean>
-	<bean id="shapes" class="practice.spring.core.shapes.utilities.Shapes">
+	<bean id="shapes" class="practice.spring.core.utilities.shapes.Shapes">
 		<property name="points">
 			<list>
 				<ref bean="pointA"/>
@@ -40,12 +40,12 @@
 			</list>
 		</property>
 	</bean>
-	
+	<bean class="practice.spring.core.utilities.shapes.ShapesBeanPostProcessor"/>
 	<bean id="shapes_autowiring_bytype" autowire="byType" parent="shapes"/>
-	<bean id="circle" class="practice.spring.core.shapes.Circle">
+	 <bean id="circle" class="practice.spring.core.shapes.Circle">
 		<property name="center" ref="center"/>
-	</bean>
-	<bean id="center" class="practice.spring.core.shapes.utilities.Point">
+	</bean> 
+	<bean id="center" class="practice.spring.core.utilities.shapes.Point">
 		<property name="x" value="20" />
 		<property name="y" value="10" />
 	</bean>

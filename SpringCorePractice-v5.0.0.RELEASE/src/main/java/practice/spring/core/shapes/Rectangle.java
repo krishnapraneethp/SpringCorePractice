@@ -3,8 +3,8 @@ package practice.spring.core.shapes;
 import java.util.List;
 import java.util.Set;
 
-import practice.spring.core.shapes.utilities.Point;
-import practice.spring.core.shapes.utilities.Shape;
+import practice.spring.core.utilities.shapes.Point;
+import practice.spring.core.utilities.shapes.Shape;
 
 public class Rectangle implements Shape {
 

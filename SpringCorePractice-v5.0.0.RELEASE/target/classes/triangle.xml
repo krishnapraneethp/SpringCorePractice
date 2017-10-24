@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-	<bean id="triangle-constructorinjector" class="practice.spring.core.shapes.utilities.TriangleDescr">
+	<bean id="triangle-constructorinjector" class="practice.spring.core.utilities.shapes.TriangleDescr">
 		<constructor-arg type="java.lang.String" index="3"
 			value="Krishna" />
 		<constructor-arg type="int" value="20" index="1" />
@@ -17,27 +17,28 @@
 	<bean id="triangle-autowiring-constructor" class="practice.spring.core.shapes.Triangle"
 		autowire="constructor" />
 
-	<bean id="triangle-autowiring-byType" class="practice.spring.core.autowire.bytype.TriangleAW"/>
-	<bean id="triangle-scope-prototype" parent="triangle_singleton" scope="prototype"/>
-	
+	<bean id="triangle-autowiring-byType" class="practice.spring.core.autowire.bytype.TriangleAW" />
+	<bean id="triangle-scope-prototype" parent="triangle_singleton"
+		scope="prototype" />
+
 	<bean id="triangle_singleton" class="practice.spring.core.shapes.Triangle"
 		scope="singleton" init-method="myInitMethod" destroy-method="myDestroyMethod">
 		<property name="pointA" ref="zeroPoint" />
 		<property name="pointB">
-			<bean class="practice.spring.core.shapes.utilities.Point">
+			<bean class="practice.spring.core.utilities.shapes.Point">
 				<property name="x" value="0" />
 				<property name="y" value="-20" />
 			</bean>
 		</property>
 		<property name="pointC">
-			<bean class="practice.spring.core.shapes.utilities.Point">
+			<bean class="practice.spring.core.utilities.shapes.Point">
 				<property name="x" value="20" />
 				<property name="y" value="0" />
 			</bean>
 		</property>
 		<property name="triangleDescr" ref="triangle-description" />
 	</bean>
-	<bean id="zeroPoint" class="practice.spring.core.shapes.utilities.Point">
+	<bean id="zeroPoint" class="practice.spring.core.utilities.shapes.Point">
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>

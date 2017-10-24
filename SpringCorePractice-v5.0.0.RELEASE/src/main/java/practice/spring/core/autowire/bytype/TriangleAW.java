@@ -1,8 +1,8 @@
 package practice.spring.core.autowire.bytype;
 
-import practice.spring.core.shapes.utilities.Point;
-import practice.spring.core.shapes.utilities.Shape;
-import practice.spring.core.shapes.utilities.TriangleDescr;
+import practice.spring.core.utilities.shapes.Point;
+import practice.spring.core.utilities.shapes.Shape;
+import practice.spring.core.utilities.shapes.TriangleDescr;
 
 public class TriangleAW implements Shape {
 

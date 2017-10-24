@@ -6,9 +6,9 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-import practice.spring.core.shapes.utilities.Point;
-import practice.spring.core.shapes.utilities.Shape;
-import practice.spring.core.shapes.utilities.Shapes;
+import practice.spring.core.utilities.shapes.Point;
+import practice.spring.core.utilities.shapes.Shape;
+import practice.spring.core.utilities.shapes.Shapes;
 
 public class Triangle extends Shapes implements Shape, ApplicationContextAware {
 

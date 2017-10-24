@@ -3,7 +3,7 @@ package practice.spring.core;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import practice.spring.core.shapes.utilities.Shapes;
+import practice.spring.core.utilities.shapes.Shapes;
 
 public class DrawingApp {
 

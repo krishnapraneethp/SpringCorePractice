@@ -6,7 +6,7 @@
 
 	<bean id="rectangle_collections" class="practice.spring.core.shapes.Rectangle">
 		<property name="listPoints">
-			<list value-type="practice.spring.core.shapes.utilities.Point">
+			<list value-type="practice.spring.core.utilities.shapes.Point">
 				<ref bean="pointA" />
 				<ref bean="pointA" />
 				<ref bean="pointC" />
@@ -14,7 +14,7 @@
 			</list>
 		</property>
 		<property name="setPoints">
-			<set value-type="practice.spring.core.shapes.utilities.Point">
+			<set value-type="practice.spring.core.utilities.shapes.Point">
 				<ref bean="pointA" />
 				<ref bean="pointA" />
 				<ref bean="pointC" />
@@ -22,20 +22,21 @@
 			</set>
 		</property>
 	</bean>
-	<bean id="pointA" class="practice.spring.core.shapes.utilities.Point">
+	<bean id="pointA" class="practice.spring.core.utilities.shapes.Point">
 		<property name="x" value="2" />
 		<property name="y" value="4" />
 	</bean>
-	<bean id="pointB" class="practice.spring.core.shapes.utilities.Point">
+	<bean id="pointB" class="practice.spring.core.utilities.shapes.Point">
 		<property name="x" value="2" />
 		<property name="y" value="10" />
 	</bean>
-	<bean id="pointC" class="practice.spring.core.shapes.utilities.Point">
+	<bean id="pointC" class="practice.spring.core.utilities.shapes.Point">
 		<property name="x" value="6" />
 		<property name="y" value="10" />
 	</bean>
-	<bean id="pointD" class="practice.spring.core.shapes.utilities.Point">
+	<bean id="pointD" class="practice.spring.core.utilities.shapes.Point">
 		<property name="x" value="6" />
 		<property name="y" value="4" />
 	</bean>
+	<alias name="rectangle_collections" alias="rectangle"/>
 </beans>

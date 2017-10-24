@@ -1,7 +1,7 @@
 package practice.spring.core.shapes;
 
-import practice.spring.core.shapes.utilities.Point;
-import practice.spring.core.shapes.utilities.Shape;
+import practice.spring.core.utilities.shapes.Point;
+import practice.spring.core.utilities.shapes.Shape;
 
 public class Circle implements Shape {
 	
@@ -16,9 +16,11 @@ public class Circle implements Shape {
 	public String draw() {
 		return this.toString();
 	}
+
 	public Point getCenter() {
 		return center;
 	}
+
 	public void setCenter(Point center) {
 		this.center = center;
 	}

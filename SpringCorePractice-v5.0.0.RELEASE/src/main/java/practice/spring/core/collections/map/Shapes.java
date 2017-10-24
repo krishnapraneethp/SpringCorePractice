@@ -7,7 +7,7 @@ import java.util.Map;
 
 import practice.spring.core.shapes.Rectangle;
 import practice.spring.core.shapes.Triangle;
-import practice.spring.core.shapes.utilities.Shape;
+import practice.spring.core.utilities.shapes.Shape;
 
 /**
  * @author krishnapraneethp

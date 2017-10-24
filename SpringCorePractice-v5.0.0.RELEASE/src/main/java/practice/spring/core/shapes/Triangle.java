@@ -3,9 +3,9 @@ package practice.spring.core.shapes;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-import practice.spring.core.shapes.utilities.Point;
-import practice.spring.core.shapes.utilities.Shape;
-import practice.spring.core.shapes.utilities.TriangleDescr;
+import practice.spring.core.utilities.shapes.Point;
+import practice.spring.core.utilities.shapes.Shape;
+import practice.spring.core.utilities.shapes.TriangleDescr;
 
 public class Triangle implements Shape, InitializingBean, DisposableBean {
 

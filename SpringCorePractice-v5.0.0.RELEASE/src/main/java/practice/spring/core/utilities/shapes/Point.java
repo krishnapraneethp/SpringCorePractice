@@ -1,4 +1,4 @@
-package practice.spring.core.shapes.utilities;
+package practice.spring.core.utilities.shapes;
 
 public class Point {
 	private int x;

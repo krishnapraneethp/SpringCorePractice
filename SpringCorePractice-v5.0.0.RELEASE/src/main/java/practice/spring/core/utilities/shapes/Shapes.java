@@ -1,4 +1,4 @@
-package practice.spring.core.shapes.utilities;
+package practice.spring.core.utilities.shapes;
 
 import java.util.List;
 
