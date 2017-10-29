@@ -5,7 +5,6 @@ package practice.spring.core.collections.map;
 
 import java.util.Map;
 
-import practice.spring.core.shapes.Rectangle;
 import practice.spring.core.shapes.Triangle;
 import practice.spring.core.utilities.shapes.Shape;
 

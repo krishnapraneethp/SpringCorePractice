@@ -1,4 +1,4 @@
-package practice.spring.core.shapes;
+package practice.spring.core.collections.map;
 
 import java.util.List;
 import java.util.Set;

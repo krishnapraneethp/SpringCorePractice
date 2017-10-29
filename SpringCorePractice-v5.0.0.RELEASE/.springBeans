@@ -7,9 +7,9 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>src/main/resources/triangle.xml</config>
-		<config>src/main/resources/rectangle.xml</config>
-		<config>src/main/resources/spring.xml</config>
+		<config>src/main/resources/shapes_config/triangle.xml</config>
+		<config>src/main/resources/shapes_config/rectangle.xml</config>
+		<config>src/main/resources/shapes_config/spring.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

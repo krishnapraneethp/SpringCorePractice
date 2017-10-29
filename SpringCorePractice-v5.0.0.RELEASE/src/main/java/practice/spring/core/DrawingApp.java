@@ -8,16 +8,13 @@ import practice.spring.core.utilities.shapes.Shape;
 public class DrawingApp {
 
 	public static void main(String[] args) {
-		AbstractApplicationContext applicationContext= null;
+		AbstractApplicationContext applicationContext= new ClassPathXmlApplicationContext("spring.xml");
 		try {
-			applicationContext = new ClassPathXmlApplicationContext("spring.xml");
 			applicationContext.registerShutdownHook();
-			Shape rectangle = (Shape) applicationContext.getBean("triangle");
-			System.out.println(rectangle.draw());
+			Shape shape = (Shape) applicationContext.getBean("circle");
+			System.out.println(shape.draw());
 		} finally {
 			applicationContext.close();
 		}
-			
-			
 	}
 }

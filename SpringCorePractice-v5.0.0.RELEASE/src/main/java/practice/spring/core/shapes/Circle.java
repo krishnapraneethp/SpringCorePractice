@@ -1,5 +1,7 @@
 package practice.spring.core.shapes;
 
+import org.springframework.beans.factory.annotation.Required;
+
 import practice.spring.core.utilities.shapes.Point;
 import practice.spring.core.utilities.shapes.Shape;
 
@@ -14,13 +16,14 @@ public class Circle implements Shape {
 	
 	@Override
 	public String draw() {
-		return this.toString();
+		return "Circle: "+this.toString();
 	}
 
 	public Point getCenter() {
 		return center;
 	}
-
+	
+	@Required
 	public void setCenter(Point center) {
 		this.center = center;
 	}

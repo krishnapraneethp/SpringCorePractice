@@ -64,12 +64,12 @@ public class Triangle implements Shape, InitializingBean, DisposableBean {
 	public String toString() {
 		return "coordinates " + "(" + this.getPointA().getX() + "," + this.getPointA().getY()
 				+ ")," + "(" + this.getPointB().getX() + "," + this.getPointB().getY() + ")," + "("
-				+ this.getPointC().getX() + "," + this.getPointC().getY() + "). "+this.getTriangleDescr();
+				+ this.getPointC().getX() + "," + this.getPointC().getY() + ")";//."+this.getTriangleDescr();
 	}
 
 	@Override
 	public String draw() {
-		return this.toString();
+		return "Triangle drawn: "+this.toString();
 	}
 	@Override
 	public void destroy() throws Exception {

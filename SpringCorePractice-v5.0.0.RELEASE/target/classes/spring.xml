@@ -2,7 +2,27 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
-<import resource="shapes.xml"/>
-	<bean id="stringBuilder" class = "java.lang.StringBuilder" scope="prototype"/>
-	
+	<bean id="triangle" class="practice.spring.core.shapes.Triangle">
+		<property name="pointA" ref="zeroPoint" />
+		<property name="pointB" ref="pointB" />
+		<property name="pointC" ref="pointC" />
+	</bean>
+	<bean id="zeroPoint" class="practice.spring.core.utilities.shapes.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointB" class="practice.spring.core.utilities.shapes.Point">
+		<property name="x" value="0" />
+		<property name="y" value="-20" />
+	</bean>
+	<bean name="pointC" class="practice.spring.core.utilities.shapes.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="circle" class="practice.spring.core.shapes.Circle">
+
+	</bean>
+	<bean
+		class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
+
 </beans>

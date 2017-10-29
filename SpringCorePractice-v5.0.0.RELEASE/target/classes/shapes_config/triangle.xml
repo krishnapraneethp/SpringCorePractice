@@ -20,7 +20,20 @@
 	<bean id="triangle-autowiring-byType" class="practice.spring.core.autowire.bytype.TriangleAW" />
 	<bean id="triangle-scope-prototype" parent="triangle_singleton"
 		scope="prototype" />
-
+	<bean id="triangle" class="practice.spring.core.shapes.Triangle">
+		<property name="pointA" ref="zeroPoint" />
+		<property name="pointB" ref="pointB" />
+		<property name="pointC" ref="pointC" />
+		<property name="triangleDescr" ref="triangle-description" />
+	</bean>
+	<bean id="pointB" class="practice.spring.core.utilities.shapes.Point">
+		<property name="x" value="0" />
+		<property name="y" value="-20" />
+	</bean>
+	<bean name="pointC" class="practice.spring.core.utilities.shapes.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean>
 	<bean id="triangle_singleton" class="practice.spring.core.shapes.Triangle"
 		scope="singleton" init-method="myInitMethod" destroy-method="myDestroyMethod">
 		<property name="pointA" ref="zeroPoint" />
@@ -44,5 +57,4 @@
 	</bean>
 	<alias name="zeroPoint" alias="pointA" />
 	<alias name="triangle-constructorinjector" alias="triangle-description" />
-	<alias name="triangle" alias="triangle-scope-singleton" />
 </beans>

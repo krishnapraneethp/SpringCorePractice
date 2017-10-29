@@ -8,8 +8,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 import practice.spring.core.autowire.bytype.TriangleAW;
+import practice.spring.core.collections.map.Rectangle;
 import practice.spring.core.shapes.Circle;
-import practice.spring.core.shapes.Rectangle;
 import practice.spring.core.shapes.Triangle;
 
 public class Shapes implements Shape, ApplicationContextAware, BeanNameAware {

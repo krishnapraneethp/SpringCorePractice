@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 							http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-	<bean id="rectangle_collections" class="practice.spring.core.shapes.Rectangle">
+	<bean id="rectangle_collections" class="practice.spring.core.collections.map.Rectangle">
 		<property name="listPoints">
 			<list value-type="practice.spring.core.utilities.shapes.Point">
 				<ref bean="pointA" />
